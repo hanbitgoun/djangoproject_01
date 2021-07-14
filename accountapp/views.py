@@ -28,7 +28,7 @@ def hello_world(request):
         return render(request, 'accountapp/hello_world.html',
                       context={'hello_world_list': hello_world_list})
 
-
+# AccountCreate
 class AccountCreateView(CreateView):
     model = User
     # django 제공
