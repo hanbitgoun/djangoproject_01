@@ -7,11 +7,12 @@
             <h4>{{ target_user.username }}</h4>
         </div>
 
-        {# detail 페이지 접근 조건 #}
-        {% if user == target_user %}
         <div>
             {{ target_user.date_joined }}
         </div>
+
+        {# detail 페이지 접근 조건 #}
+        {% if user == target_user %}
         <div>
                 <a href="{% url 'accountapp:update' pk=target_user.pk %}">
                     Update Info
