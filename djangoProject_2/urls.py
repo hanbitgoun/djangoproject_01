@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # 관리자 페이지 terminal > python manage.py createsuperuser
-    path('accounts/',include('accountapp.urls'))
+    path('accounts/',include('accountapp.urls')),
+    path('profiles/',include('profileapp.urls')), # terminal > python manage.py startapp profileapp
 ]
