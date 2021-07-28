@@ -44,10 +44,12 @@ class AccountCreateView(CreateView):
     # django 제공
     form_class = UserCreationForm
     # class > reverse_lazy 사용
-    success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
-#
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
+
+
 class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user'
@@ -62,8 +64,11 @@ class AccountUpdateView(UpdateView):
     # 수정할 내용 - form_class
     form_class = AccountCreationForm
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/update.html'
+
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
+
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
