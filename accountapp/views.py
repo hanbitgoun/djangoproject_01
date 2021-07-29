@@ -55,7 +55,9 @@ class AccountDetailView(DetailView):
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
 
+
 has_ownership = [login_required, account_ownership_required]
+
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
