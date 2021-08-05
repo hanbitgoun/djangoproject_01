@@ -284,7 +284,7 @@ let magicGrid = new MagicGrid({
 
 var masonrys = document.getElementsByTagName("img") /* documnet = magicgrid가 불러오는 html tag */
 
-for (let i = 0; masonrys.length; i++) {
+for (let i = 0; i < masonrys.length; i++) {
   masonrys[i].addEventListener('load', function () {
     magicGrid.positionItems();
   },false)
