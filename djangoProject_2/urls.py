@@ -24,6 +24,7 @@ urlpatterns = [
     path('profiles/', include('profileapp.urls')),  # terminal > python manage.py startapp profileapp
     path('articles/', include('articleapp.urls')),  # articleapp
     path('comments/', include('commentapp.urls')),
+    path('projects/', include('projectapp.urls')),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # profile image 파일 경로
 
