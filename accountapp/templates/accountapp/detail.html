@@ -42,4 +42,9 @@
         {% endif %}
     </div>
 
+    {# 프로필 페이지에 작성한 article 출력 #}
+    <div>
+        {% include 'snippets/list_fragment.html' with article_list=object_list%}
+    </div>
+
 {% endblock %}
